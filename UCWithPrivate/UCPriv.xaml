@@ -10,8 +10,9 @@
     d:DesignWidth="800"
     Loaded="ucpr_Loaded"
     mc:Ignorable="d">
-    <StackPanel>
-        <TextBox Text="{Binding ElementName=ucpr, Path=Val}" />
-        <TextBox Text="{Binding ElementName=ucpr, Path=TwiceVal}" />
-    </StackPanel>
+    <DockPanel LastChildFill="False">
+        <TextBox DockPanel.Dock="Top" Text="{Binding ElementName=ucpr, Path=Val}" />
+        <ListBox DockPanel.Dock="Left" ItemsSource="{Binding ElementName=ucpr, Path=OriginalNumbers}" />
+        <ListBox ItemsSource="{Binding ElementName=ucpr, Path=PrivNumbers}" />
+    </DockPanel>
 </UserControl>

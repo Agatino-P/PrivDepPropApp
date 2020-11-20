@@ -16,10 +16,14 @@
     </Window.DataContext>
     <StackPanel>
         <Border BorderBrush="Crimson" BorderThickness="5">
-            <ucwithpriv:UCPriv x:Name="ucp" Val="{Binding VMInt}" />
+            <ucwithpriv:UCPriv
+                x:Name="ucp"
+                Numbers="{Binding VMNumbers}"
+                Val="{Binding VMInt}" />
         </Border>
         <Button Command="{Binding ShowCmd}" Content="ShowCmd" />
         <TextBox x:Name="mwtb" Text="{Binding VMInt}" />
         <TextBox x:Name="uctb" Text="{Binding ElementName=ucp, Path=Val}" />
+        <ListBox ItemsSource="{Binding VMNumbers}" />
     </StackPanel>
 </Window>
