@@ -1,0 +1,25 @@
+﻿<Window
+    x:Class="TestApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TestApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ucwithpriv="clr-namespace:UCWithPrivate;assembly=UCWithPrivate"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    TextElement.FontSize="32"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <StackPanel>
+        <Border BorderBrush="Crimson" BorderThickness="5">
+            <ucwithpriv:UCPriv x:Name="ucp" Val="{Binding VMInt}" />
+        </Border>
+        <Button Command="{Binding ShowCmd}" Content="ShowCmd" />
+        <TextBox x:Name="mwtb" Text="{Binding VMInt}" />
+        <TextBox x:Name="uctb" Text="{Binding ElementName=ucp, Path=Val}" />
+    </StackPanel>
+</Window>
